@@ -1,0 +1,17 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %} 
+{%block title %}All users{% endblock %}
+<!-- prettier-ignore -->
+{%block content %}
+<h1 class="display-4 text-center">Users</h1>
+{%for user in users %}
+<li class="m-4">
+  <img src="{{user.user_image}}" alt="users image" />
+  <a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
+</li>
+{%endfor %}
+<button onclick="location.href='/users/new'" class="btn btn-primary m-3">
+  Add user
+</button>
+<!-- prettier-ignore -->
+{% endblock %}
