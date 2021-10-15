@@ -3,15 +3,21 @@
 {%block title %}All users{% endblock %}
 <!-- prettier-ignore -->
 {%block content %}
-<h1 class="display-4 text-center">Users</h1>
-{%for user in users %}
-<li class="m-4">
-  <img src="{{user.user_image}}" alt="users image" />
-  <a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
-</li>
-{%endfor %}
-<button onclick="location.href='/users/new'" class="btn btn-primary m-3">
-  Add user
-</button>
+<div class="container">
+  <h1 class="display-4">Users</h1>
+  {%for user in users %}
+  <li class="m-4">
+    <img src="{{user.user_image}}" alt="users image" />
+    <a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
+  </li>
+  {%endfor %}
+  <button onclick="location.href='/users/new'" class="btn btn-primary m-3">
+    Add user
+  </button>
+  <button onclick="location.href='/tags'" class="btn btn-primary m-3">
+    View tags
+  </button>
+</div>
+
 <!-- prettier-ignore -->
 {% endblock %}

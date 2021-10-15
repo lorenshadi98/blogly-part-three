@@ -1,0 +1,27 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %} 
+{%block title %}Tag details{% endblock %}
+<!-- prettier-ignore -->
+{%block content %}
+<div class="container">
+  <h1>{{tag.name}}</h1>
+  <button class="btn btn-primary" onclick="location.href='/tags'">Back</button>
+  <button
+    class="btn btn-primary"
+    onclick="location.href='/tags/{{tag.id}}/edit'"
+  >
+    Edit
+  </button>
+  <button
+    class="btn btn-danger"
+    onclick="location.href='/tags/{{tag.id}}/delete'"
+  >
+    Delete
+  </button>
+  <button class="btn btn-primary" onclick="location.href='/tags/new'">
+    Add a tag
+  </button>
+</div>
+
+<!-- prettier-ignore -->
+{% endblock %}

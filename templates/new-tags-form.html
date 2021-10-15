@@ -1,0 +1,30 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %} 
+{%block title %}New post{% endblock %}
+<!-- prettier-ignore -->
+{%block content %}
+<h1 class="display-4 text-center">Add new tags</h1>
+<div class="container">
+  <form action="/tags/new" method="POST">
+    <div class="form-group m-3">
+      <label for="tag-title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="tag-title"
+        name="tag-title"
+        placeholder="Enter new tag"
+        required
+      />
+    </div>
+    <div class="form-group m-3">
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </div>
+  </form>
+  <button onclick="location.href='/tags'" class="btn btn-outline-danger m-3">
+    Cancel
+  </button>
+</div>
+
+<!-- prettier-ignore -->
+{% endblock %}

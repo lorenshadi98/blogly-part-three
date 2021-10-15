@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %} 
+{%block title %}All tags{% endblock %}
+<!-- prettier-ignore -->
+{%block content %}
+
+<div class="container">
+  <h1 class="display-4">Tags</h1>
+  {%for tag in tags %}
+  <li>
+    <a href="/tags/{{tag.id}}">{{tag.name}}</a>
+  </li>
+  {%endfor %}
+  <button onclick="location.href='/tags/new'" class="btn btn-primary m-3">
+    Add tag
+  </button>
+  <button onclick="location.href='/users'" class="btn btn-primary m-3">
+    Back
+  </button>
+</div>
+
+<!-- prettier-ignore -->
+{% endblock %}
